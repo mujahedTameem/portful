@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>موقعي الشخصي - اهتماماتي وسيرتي الذاتية ومشاريعي</title>
+<style>
+  /* Reset & base */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0; padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f0f2f5;
+    color: #222;
+    line-height: 1.6;
+  }
+  a {
+    text-decoration: none;
+    color: #4A47A3;
+    transition: color 0.3s ease;
+  }
+  a:hover {
+    color: #6659e3;
+  }
+  header {
+    background: #2E8B57; /* تم تغيير اللون هنا إلى أخضر داكن جميل */
+    color: white;
+    padding: 1.5rem 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(46,139,87,0.6);
+  }
+  nav {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* تم تغيير المحاذاة إلى الوسط */
+    gap: 2rem;
+  }
+  nav .logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #FFD700; /* لون ذهبي مميز لاسم الموقع */
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0; margin: 0;
+    gap: 1.5rem;
+    align-items: center;
+  }
+  nav ul li {
+    font-weight: 600;
+  }
+  main {
+    max-width: 960px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+  section {
+    margin-bottom: 3rem;
+    padding: 1rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  }
+  section h2 {
+    color: #4A47A3;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    border-bottom: 3px solid #6659e3;
+    padding-bottom: 0.3rem;
+  }
+  /* Homepage Interests */
+  #interests p {
+    font-size: 1.15rem;
+    color: #4a4a4a;
+  }
+  /* CV */
+  .cv-section > div {
+    margin-bottom: 1rem;
+  }
+  .cv-section h3 {
+    margin-bottom: 0.3rem;
+    color: #6659e3;
+    font-weight: 600;
+  }
+  ul.cv-list {
+    padding-inline-start: 1.2rem;
+    color: #555;
+  }
+  ul.cv-list li {
+    margin-bottom: 0.4rem;
+  }
+
+  /* Projects */
+  .projects-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .project {
+    border: 1px solid #ddd;
+    padding: 0.8rem;
+    border-radius: 8px;
+    transition: box-shadow 0.3s ease;
+    background: #fafafa;
+  }
+  .project:hover {
+    box-shadow: 0 2px 10px rgba(74,71,163,0.3);
+  }
+  .project h4 {
+    margin: 0 0 0.5rem 0;
+    color: #4A47A3;
+  }
+  .project p {
+    margin: 0;
+    color: #555;
+  }
+
+  /* Contact */
+  #contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  #contact label {
+    font-weight: 600;
+    color: #222;
+  }
+  #contact input, #contact textarea {
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    resize: vertical;
+    font-family: inherit;
+  }
+  #contact input:focus, #contact textarea:focus {
+    outline: none;
+    border-color: #6659e3;
+    box-shadow: 0 0 5px #6659e3aa;
+  }
+  #contact button {
+    background: #4A47A3;
+    color: white;
+    font-size: 1.2rem;
+    padding: 0.75rem 0;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+  }
+  #contact button:hover {
+    background: #6659e3;
+  }
+  #contact #form-message {
+    margin-top: 0.8rem;
+    font-weight: 600;
+  }
+  #form-message.success {
+    color: green;
+  }
+  #form-message.error {
+    color: red;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Responsive */
+  @media(max-width: 600px) {
+    nav ul {
+      gap: 1rem;
+      font-size: 0.9rem;
+    }
+    .projects-list {
+      gap: 1.2rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav aria-label="القائمة الرئيسية">
+    <div class="logo" tabindex="0">tameem</div>
+    <ul>
+      <li><a href="#interests">اهتماماتي</a></li>
+      <li><a href="#cv">السيرة الذاتية</a></li>
+      <li><a href="#projects">مشاريعي</a></li>
+      <li><a href="#contact">تواصل معي</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <!-- Homepage interests -->
+  <section id="interests" tabindex="0" aria-label="قسم اهتماماتي">
+    <h2>اهتماماتي العامة</h2>
+    <p>أنا شخص شغوف بالتقنية، البرمجة، تطوير الويب، وتعلم المهارات الجديدة باستمرار. أحب القراءة، السفر واكتشاف ثقافات مختلفة، بالإضافة إلى الاهتمام بالرياضة والطعام الصحي.</p>
+  </section>
+
+  <!-- CV section -->
+  <section id="cv" tabindex="0" aria-label="قسم السيرة الذاتية">
+    <h2>السيرة الذاتية</h2>
+    <div class="cv-section">
+      <div>
+        <h3>التعليم</h3>
+        <ul class="cv-list">
+          <li>بكالوريوس في علوم الحاسوب - جامعة الجزيرة (2021 - 2025)</li>
+          <li>دورات متقدمة في تطوير الويب والبرمجة</li>
+        </ul>
+      </div>
+      <div>
+        <h3>المهارات التقنية</h3>
+        <ul class="cv-list">
+          <li>HTML, CSS, JavaScript, React</li>
+          <li>Node.js, Express</li>
+          <li>تصميم واجهات المستخدم (UI/UX)</li>
+          <li>أساسيات قواعد البيانات مثل MySQL وMongoDB</li>
+        </ul>
+      </div>
+      <div>
+        <h3>الخبرة العملية</h3>
+        <ul class="cv-list">
+          <li>مطور ويب مستقل - منذ 2020 وحتى الآن</li>
+          <li>عمل لمشاريع مختلفة منها مواقع تجارية وتطبيقات تفاعلية</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" tabindex="0" aria-label="قسم المشاريع التي قمت بها">
+    <h2>مشاريعي</h2>
+    <div class="projects-list">
+      <div class="project" tabindex="0">
+        <h4>مشروع موقع التجارة الإلكترونية</h4>
+        <p>تطوير موقع متكامل لبيع المنتجات عبر الإنترنت باستخدام React وNode.js مع نظام دفع آمن.</p>
+      </div>
+      <div class="project" tabindex="0">
+        <h4>تطبيق إدارة المهام</h4>
+        <p>تطبيق ويب لمتابعة المهام وتنظيم الوقت، مزود بخاصية التنبيهات وجدولة المهام.</p>
+      </div>
+      <div class="project" tabindex="0">
+        <h4>موقع شخصي تفاعلي</h4>
+        <p>تصميم وبرمجة موقع شخصي يعرض السيرة الذاتية والمشاريع مع دعم للغات متعددة.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" tabindex="0" aria-label="قسم التواصل">
+    <h2>تواصل معي</h2>
+    <form id="contact-form" novalidate aria-describedby="form-message" aria-live="polite">
+      <label for="name">الاسم:</label>
+      <input type="text" id="name" name="name" required aria-required="true" placeholder="ادخل اسمك" />
+      
+      <label for="email">البريد الإلكتروني:</label>
+      <input type="email" id="email" name="email" required aria-required="true" placeholder="ادخل بريدك الإلكتروني" />
+      
+      <label for="message">الرسالة:</label>
+      <textarea id="message" name="message" rows="5" required aria-required="true" placeholder="اكتب رسالتك هنا"></textarea>
+      
+      <button type="submit">إرسال</button>
+      <p id="form-message" role="alert"></p>
+    </form>
+  </section>
+</main>
+
+<script>
+  const form = document.getElementById('contact-form');
+  const formMessage = document.getElementById('form-message');
+
+  function validateEmail(email) {
+    const re = /^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$/;
+    return re.test(email.toLowerCase());
+  }
+
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+    const name = form.name.value.trim();
+    const email = form.email.value.trim();
+    const message = form.message.value.trim();
+
+    if (!name) {
+      showMessage('يرجى إدخال اسمك.', 'error');
+      form.name.focus();
+      return;
+    }
+    if (!validateEmail(email)) {
+      showMessage('يرجى إدخال بريد إلكتروني صالح.', 'error');
+      form.email.focus();
+      return;
+    }
+    if (!message) {
+      showMessage('يرجى كتابة رسالة.', 'error');
+      form.message.focus();
+      return;
+    }
+
+    // Simulate sending message and success response
+    showMessage('شكراً لتواصلك! سيتم الرد عليك قريباً.', 'success');
+    form.reset();
+  });
+
+  function showMessage(text, type) {
+    formMessage.textContent = text;
+    formMessage.className = type;
+  }
+</script>
+
+</body>
+</html>
+
